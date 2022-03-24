@@ -2,7 +2,7 @@ import './style.css';
 import { Observable } from 'rxjs';
 import { ajax, AjaxResponse, AjaxRequest, AjaxError } from 'rxjs/ajax';
 const URL: string =
-  'https://eu-central-1.aws.data.mongodb-api.com/app/kvaas-giwjg/endpoint/kvaas';
+  'https://eu-central-1.aws.data.mongodb-api.com/app/kvaas-giwjg/endpoint';
 var key;
 document.getElementById('newbtn').addEventListener('click', newKey);
 document.getElementById('setbtn').addEventListener('click', setValue);
@@ -10,8 +10,8 @@ document.getElementById('getbtn').addEventListener('click', getValue);
 
 function newKey() {
   const request: AjaxRequest = {
-    method: 'POST',
-    url: URL + '/new',
+    method: 'GET',
+    url: URL + '/new?secret=ssw2022',
     crossDomain: true,
   };
   ajax(request).subscribe({
@@ -26,8 +26,9 @@ function newKey() {
 function setValue() {
   const request: AjaxRequest = {
     method: 'POST',
-    url:URL + '/post?key=' + key + '&msg=' + document.getElementById('data').value,
+    url:URL + '/set?key=' + key,
     crossDomain: true,
+    body: document.getElementById('data').value
   };
   ajax(request).subscribe({
     next: (res: AjaxResponse<any>) => {
