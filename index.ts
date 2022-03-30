@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { ajax, AjaxResponse, AjaxRequest, AjaxError } from 'rxjs/ajax';
 const URL: string =
   'https://eu-central-1.aws.data.mongodb-api.com/app/kvaas-giwjg/endpoint';
-var key="ae407fac";
+var key="";
 document.getElementById('getbtn').addEventListener('click', getValue);
 
 function getValue() {
