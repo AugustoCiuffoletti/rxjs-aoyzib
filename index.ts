@@ -5,6 +5,7 @@ const URL: string =
   'https://eu-central-1.aws.data.mongodb-api.com/app/kvaas-giwjg/endpoint';
 var key="e3ce9512";
 document.getElementById('getbtn').addEventListener('click', getValue);
+document.getElementById('setbtn').addEventListener('click', setValue);
 
 function getValue() {
   const obs = ajax({
