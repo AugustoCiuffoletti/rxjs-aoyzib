@@ -9,7 +9,7 @@ function getValue() {
   const obs = ajax({
     method: 'GET',
     url: URL + '/get?key=' + key,
-    crossDomain: true,
+    crossDomain: true
   });
   obs.subscribe({
     next: (res: AjaxResponse<any>) => {
