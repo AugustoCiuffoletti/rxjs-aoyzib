@@ -30,6 +30,7 @@ function setValue() {
     crossDomain: true,
     body: document.getElementById('data').value
   };
+  console.log(document.getElementById('data'));
   ajax(request).subscribe({
     next: (res: AjaxResponse<any>) => {
       document.getElementById('output').innerHTML = 'Ok!';
