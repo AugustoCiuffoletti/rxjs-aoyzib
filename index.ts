@@ -7,12 +7,12 @@ var key="e3ce9512";
 document.getElementById('getbtn').addEventListener('click', getValue);
 
 function getValue() {
-  const request: AjaxRequest = {
+  const obs = ajax({
     method: 'GET',
     url: URL + '/get?key=' + key,
     crossDomain: true,
-  };
-  ajax(request).subscribe({
+  });
+  obs.subscribe({
     next: (res: AjaxResponse<any>) => {
       document.getElementById('output').innerHTML = res.response;
     },
