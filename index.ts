@@ -19,3 +19,19 @@ function getValue() {
     error: (err: AjaxError) => console.error(err.response),
   });
 }
+
+function setValue() {
+  console.log(document.getElementById('data'));
+  const obs = ajax({
+    method: 'POST',
+    url:URL + '/set?key=' + key,
+    crossDomain: true,
+    body: document.getElementById('data').value
+  })
+  obs.subscribe({
+    next: (res: AjaxResponse<any>) => {
+      document.getElementById('output').innerHTML = 'Ok!';
+    },
+    error: (err: AjaxError) => console.error(err.response),
+  });
+}
